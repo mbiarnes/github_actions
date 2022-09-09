@@ -32,14 +32,22 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo ***************************
+          echo *********** pwd ****************
+          echo
           pwd
-          echo ***************************
+          echo ************ ls -al ************
+          echo
           ls -al
-          echo *****git clone ************
+          echo ***** git clone ************
+          echo
           git clone https://github.com/kiegroup/droolsjbpm-build-bootstrap.git
           echo *** cd droolsjbpm-build-bootstrap ***
+          echo 
           cd droolsjbpm-build-bootstrap
           echo *************** pwd *******
+          echo
           pwd
+          echo
+          echo ************* MAVEN CLEAN INSTALL *****************
+          echo
           mvn clean install
