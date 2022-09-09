@@ -33,21 +33,21 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo *********** pwd ****************
-          echo
+
           pwd
           echo ************ ls -al ************
-          echo
+
           ls -al
           echo ***** git clone ************
-          echo
+
           git clone https://github.com/kiegroup/droolsjbpm-build-bootstrap.git
           echo *** cd droolsjbpm-build-bootstrap ***
-          echo 
+
           cd droolsjbpm-build-bootstrap
           echo *************** pwd *******
-          echo
+
           pwd
-          echo
+
           echo ************* MAVEN CLEAN INSTALL *****************
-          echo
+
           mvn clean install
