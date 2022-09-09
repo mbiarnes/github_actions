@@ -17,8 +17,14 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        java-version: [8, 11]
+        maven-version: ['3.8.1']
+      fail-fast: true
+    runs-on: ${{ matrix.os }}
+    name: ${{ matrix.os }} - Java ${{ matrix.java-version }} - Maven
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
