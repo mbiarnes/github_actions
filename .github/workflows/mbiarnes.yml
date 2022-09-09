@@ -36,4 +36,7 @@ jobs:
           pwd
           echo ***************************
           ls -al
-          
+          git clone https://github.com/kiegroup/droolsjbpm-build-bootstrap.git
+          cd droolsjbpm-build-bootstrap
+          pwd
+          mvn clean install
