@@ -39,7 +39,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           pwd
-          if ( ${{ matrix.os == 'windows-latest' }} ); then
+          if ( ${{ matrix.os == 'windows-latest' }} )
             dir
           else
             ls -al
