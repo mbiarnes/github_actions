@@ -36,17 +36,25 @@ jobs:
         run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Run a multi-line script on windows
+        if: ${{ matrix.os == 'windows-latest' }}
         run: |
           pwd
-          if ( ${{ matrix.os == 'windows-latest' }} )
-            dir
-          else
-            ls -al
-          fi
+          dir
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script on ubuntu
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+        run: |
+          pwd
+          ls -al
+          
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
           git clone https://github.com/kiegroup/droolsjbpm-build-bootstrap.git
           cd droolsjbpm-build-bootstrap
           pwd
           echo ************* MAVEN CLEAN INSTALL *****************
 
-          mvn clean install
+          mvn clean install          
