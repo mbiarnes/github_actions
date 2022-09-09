@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  mbiarnes_build:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
@@ -39,7 +39,11 @@ jobs:
       - name: Run a multi-line script
         run: |
           pwd
-          ls -al
+          if [[ ${{ matrix.os == 'windows-latest' }} ]]; then
+            dir
+          else
+            ls -al
+          fi
           git clone https://github.com/kiegroup/droolsjbpm-build-bootstrap.git
           cd droolsjbpm-build-bootstrap
           pwd
