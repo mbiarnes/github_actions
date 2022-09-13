@@ -21,10 +21,10 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         java-version: [8, 11]
-        maven-version: ['3.8.1']
+        maven-version: ['3.8.6']
       fail-fast: true
     runs-on: ${{ matrix.os }}
-    name: ${{ matrix.os }} - Java ${{ matrix.java-version }} - Maven
+    name: ${{ matrix.os }} - Java ${{ matrix.java-version }} - Maven ${{ matrix.maben-version }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
