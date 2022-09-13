@@ -19,7 +19,7 @@ jobs:
   mbiarnes_build:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
         java-version: [8, 11]
         maven-version: ['3.8.1']
       fail-fast: true
