@@ -1,2 +1,2 @@
 # github_actions
-test repo for testing gihubn actions
+test repo for testing GitHub actions
