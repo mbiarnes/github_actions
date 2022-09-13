@@ -52,7 +52,11 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
+          git clone https://github.com/errai/errai.git
+          cd errai
           pwd
           echo ************* MAVEN CLEAN INSTALL *****************
-
-          mvn clean install          
+          mvn clean install -B -e -fae -Dfull -Dmaven.test.failure.ignore=true -Pintegration-test clean install -Derrai.codegen.details=true -Dapt-generators      
+      - name: Surefire Report
+        uses: kiegroup/droolsjbpm-build-bootstrap/.ci/actions/surefire-report@main
+        if: ${{ always() }}        
