@@ -24,7 +24,7 @@ jobs:
         maven-version: ['3.8.6']
       fail-fast: true
     runs-on: ${{ matrix.os }}
-    name: ${{ matrix.os }} - Java ${{ matrix.java-version }} - Maven ${{ matrix.maben-version }}
+    name: ${{ matrix.os }} - Java ${{ matrix.java-version }} - Maven ${{ matrix.maven-version }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
