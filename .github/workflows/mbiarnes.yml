@@ -21,7 +21,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         java-version: [8, 11]
-        maven-version: ['3.8.6']
+        maven-version: ['3.8.1']
       fail-fast: true
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.os }} - Java ${{ matrix.java-version }} - Maven ${{ matrix.maven-version }}
@@ -56,7 +56,7 @@ jobs:
           cd errai
           pwd
           echo ************* MAVEN CLEAN INSTALL *****************
-          mvn clean install -B -e -fae -Dfull -Dmaven.test.failure.ignore=true -Pintegration-test clean install -Derrai.codegen.details=true -Dapt-generators      
+          mvn -B -e -fae -Dfull -Dmaven.test.failure.ignore=true -Pintegration-test clean install -Derrai.codegen.details=true -Dapt-generators      
       - name: Surefire Report
         uses: kiegroup/droolsjbpm-build-bootstrap/.ci/actions/surefire-report@main
         if: ${{ always() }}        
